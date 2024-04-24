@@ -30,7 +30,7 @@ const useTeam = (league = "nfl", year) => {
 
   const getTeamStats = async (teamId) => {
     const response = await request(
-      `https://sports.core.api.espn.com/v2/sports/${LEAGUES[league]}/leagues/${league}/seasons/${year}/types/2/teams/${teamId}/statistics`
+      `https://sports.core.api.espn.com/v2/sports/${LEAGUES[league]}/leagues/${league}/seasons/2023/types/2/teams/${teamId}/statistics`
     );
     return response.data;
   }

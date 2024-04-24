@@ -127,7 +127,7 @@ const teamRoster = await getTeamRoster(route.params.id);
         <dt
           class="w-full flex-none text-xs font-medium leading-6 text-gray-500"
         >
-          <!-- {{ dayjs(teamRoster.nextEvent[0]?.date) ? dayjs(teamRoster.nextEvent[0].date).format("MMM DD, YYYY") : "N/A" }} -->
+          {{ teamRoster.nextEvent[0]?.date ? dayjs(teamRoster.nextEvent[0].date).format("MMM DD, YYYY") : "N/A" }}
         </dt>
         <dd
           class="w-full flex-none text-xl font-medium leading-10 tracking-tight text-gray-900"
