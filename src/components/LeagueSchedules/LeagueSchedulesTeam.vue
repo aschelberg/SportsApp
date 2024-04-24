@@ -46,7 +46,7 @@ eventMatchup.value = await getEventMatchup();
 <template>
   <!-- On this next div, add the page navigation to the team being selected -->
   <!-- (Team Page based on id similar to that on Team Page) -->
-  <div class="relative w-[50%] gap-6 flex justify-between space-x-3 border border-gray-200 bg-white px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:border-gray-400">
+  <div class="relative w-[50%] gap-6 flex justify-between space-x-3 border border-gray-200 bg-white px-6 py-5 shadow-sm focus-within:ring-2 hover:border-gray-400">
     <div class="flex-shrink-0 drop-shadow-lg">
       <img class="h-14 w-14" :src="logo" :alt="`${name} Logo`" />
     </div>

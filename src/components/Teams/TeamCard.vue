@@ -22,13 +22,11 @@ const emit = defineEmits(["goTeamPage"])
 const router = useRouter();
 const goTeamPage = (teamId, team) => {
   router.push({
-    path: `/:${teamId}/:${team}`,
+    path: `/teams/${teamId}/${teamAbbr}`,
     name: `teamOverview`,
-    params: { id: teamId, team: team }
   })
+  
 }
-
-
 
 </script>
 
@@ -41,10 +39,10 @@ const goTeamPage = (teamId, team) => {
     <div>
       <div class="-mt-px flex divide-x divide-gray-200">
         <div class="flex w-0 flex-1">
-          <a class="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900 cursor-pointer hover:bg-gray-950 hover:text-gray-50">
-            <ArrowRightOnRectangleIcon class="h-5 w-5 text-gray-400" aria-hidden="true" @click="goTeamPage(props.teamId, props.teamAbbr)" />
+          <RouterLink :to="`/teams/${teamId}/${teamAbbr}`" class="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900 cursor-pointer hover:bg-gray-950 hover:text-gray-50">
+            <ArrowRightOnRectangleIcon class="h-5 w-5 text-gray-400" aria-hidden="true"/>
             Team Page
-          </a>
+          </RouterLink>
         </div>
         <div class="-ml-px flex w-0 flex-1">
           <a class="relative inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-br-lg border border-transparent py-4 text-sm font-semibold text-gray-900">
