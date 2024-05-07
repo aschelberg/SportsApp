@@ -4,26 +4,18 @@ import dayjs from 'dayjs';
 import useTeam from '@/composables/useTeam.js';
 
 const props = defineProps({
-  teamId: {
-    type: String,
+  teamStats: {
+    type: Object,
   }
 })
 
 const currentYear = 2023
 const yearFilter = ref(currentYear)
 
-
-
-
-const { getTeamStats } = useTeam('nfl', yearFilter.value);
-const teamInfo = await getTeamStats(props.teamId);
-const teamStats = teamInfo.splits.categories
-const passing = teamStats[1]
-const rushing = teamStats[2]
-const receiving = teamStats[3]
-const defensive = teamStats[4]
-
-console.log(teamStats)
+const passing = props.teamStats[1]
+const rushing = props.teamStats[2]
+const receiving = props.teamStats[3]
+const defensive = props.teamStats[4]
 
 </script>
 

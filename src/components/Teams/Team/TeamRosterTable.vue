@@ -4,16 +4,10 @@ import useTeam from "@/composables/useTeam.js";
 import usePlayer from "@/composables/usePlayer.js";
 
 const props = defineProps({
-  teamId: {
-    type: String,
+  roster: {
+    type: Object,
   },
 });
-
-const { getTeams, getSchedule } = useLeague("nfl");
-const { getTeamRoster, getTeam } = useTeam("nfl");
-
-const team = await getTeamRoster(props.teamId)
-const roster = team.athletes
 
 </script>
 

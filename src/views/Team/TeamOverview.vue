@@ -40,9 +40,16 @@ const updateComponent = (name) => {
 // nba Warriors - 9 -- Steph Curry - 3975
 
 const { getTeams, getSchedule } = useLeague("nfl");
-const { getTeamRoster, getTeam } = useTeam("nfl");
+const { getTeamRoster, getTeam, getTeamStats } = useTeam("nfl");
 
 const teamRoster = await getTeamRoster(route.params.id);
+const roster = teamRoster.athletes
+
+const team = await getTeam(route.params.id)
+const teamSchedule = team.team.nextEvent;
+
+const teamInfo = await getTeamStats(route.params.id);
+const teamStats = teamInfo.splits.categories
 
 </script>
 
@@ -165,15 +172,15 @@ const teamRoster = await getTeamRoster(route.params.id);
 
   <TeamRosterTable 
     v-show="teamTab === 'Roster'"
-    :teamId="route.params.id"
+    :roster="roster"
   />
   <TeamScheduleTable
     v-show="teamTab === 'Schedule'"
-    :teamId="route.params.id"
+    :teamSchedule="teamSchedule"
   />
   <TeamStats
     v-show="teamTab === 'Team Stats'"
-    :teamId="route.params.id"
+    :teamStats="teamStats"
   />
 </div>
 

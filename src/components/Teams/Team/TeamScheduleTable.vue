@@ -5,15 +5,13 @@ import usePlayer from "@/composables/usePlayer.js";
 import dayjs from "dayjs";
 
 const props = defineProps({
-  teamId: {
-    type: String,
+  teamSchedule: {
+    type: Object,
   },
 });
 
-const { getTeamRoster, getTeam } = useTeam("nfl");
 
-const team = await getTeam(props.teamId);
-const teamSchedule = team.team.nextEvent;
+
 // .filter((t) => {
 //   return t.seasonType.type === 2
 // })

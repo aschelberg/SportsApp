@@ -39,7 +39,7 @@ const mainFilters = [
   { name: 'Week 18', value: '18', href: '#', current: false },
 ]
 
-const currentWeek = ref('1')
+const currentWeek = ref('18')
 const updateCurrentWeek = (name) => {
   mainFilters.forEach((t) => t.current = false)
   const selectedWeek = mainFilters.find((t) => t.name === name)
