@@ -12,11 +12,11 @@ const props = defineProps({
 </script>
 
 <template>
-<div class="mt-10 px-4 sm:px-8 lg:px-10 container">
+<div class="mt-10 mx-auto px-4 sm:px-8 lg:px-10 container">
     <!-- Player Season Totals -->
     <div class="sm:flex sm:items-center">
       <div class="sm:flex-auto">
-        <h1 class="text-xl font-semibold leading-6 text-gray-900">
+        <h1 class="text-xl text-center font-semibold leading-6 text-gray-900">
           Roster
         </h1>
         <!-- <p class="mt-2 text-sm text-gray-700">A list of all the users in your account including their name, title, email and role.</p> -->
@@ -33,40 +33,40 @@ const props = defineProps({
           >
             <table class="min-w-full divide-y divide-gray-300">
               <thead>
-                <tr>
+                <tr class="text-center">
                   <th
                     scope="col"
-                    class="px-3 py-3 text-left text-xs font-medium uppercase tracking-wide text-gray-500"
+                    class="text-left px-3 py-3 text-xs font-medium uppercase tracking-wide text-gray-500"
                   >
                     Name
                   </th>
                   <th
                     scope="col"
-                    class="py-3 pl-4 pr-3 text-left text-xs font-medium uppercase tracking-wide text-gray-500 sm:pl-0"
+                    class="px-3 py-3 text-xs font-medium uppercase tracking-wide text-gray-500"
                   >
                     Position
                   </th>
                   <th
                     scope="col"
-                    class="py-3 pl-4 pr-3 text-left text-xs font-medium uppercase tracking-wide text-gray-500 sm:pl-0"
+                    class="px-3 py-3 text-xs font-medium uppercase tracking-wide text-gray-500"
                   >
                     Age
                   </th>
                   <th
                     scope="col"
-                    class="py-3 pl-4 pr-3 text-left text-xs font-medium uppercase tracking-wide text-gray-500 sm:pl-0"
+                    class="px-3 py-3 text-xs font-medium uppercase tracking-wide text-gray-500"
                   >
                     Height
                   </th>
                   <th
                     scope="col"
-                    class="py-3 pl-4 pr-3 text-left text-xs font-medium uppercase tracking-wide text-gray-500 sm:pl-0"
+                    class="px-3 py-3 text-xs font-medium uppercase tracking-wide text-gray-500"
                   >
                     Weight
                   </th>
                   <th
                     scope="col"
-                    class="py-3 pl-4 pr-3 text-left text-xs font-medium uppercase tracking-wide text-gray-500 sm:pl-0"
+                    class="px-3 py-3 text-xs font-medium uppercase tracking-wide text-gray-500"
                   >
                     Experience
                   </th>
@@ -78,29 +78,29 @@ const props = defineProps({
                     {{ player.fullName }}
                   </td>
                   <td
-                    class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
+                    class="text-center whitespace-nowrap px-3 py-4 text-sm text-gray-500"
                   >
                     {{ player.position.abbreviation }}
                   </td>  
                   <td
-                    class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
+                    class="text-center whitespace-nowrap px-3 py-4 text-sm text-gray-500"
                   >
                     {{ player.age }}
                   </td> 
                   <td
-                    class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
+                    class="text-center whitespace-nowrap px-3 py-4 text-sm text-gray-500"
                   >
                     {{ ~~(player.height/12) }}' {{ player.height%12 }}"
                   </td> 
                   <th
                     scope="col"
-                    class="py-3 pl-4 pr-3 text-left text-xs font-medium tracking-wide text-gray-500 sm:pl-0"
+                    class="text-center py-3 pl-4 pr-3 text-xs font-medium tracking-wide text-gray-500 sm:pl-0"
                   >
                     {{ player.weight }} lbs
                   </th>
                   <th
                     scope="col"
-                    class="py-3 pl-4 pr-3 text-left text-xs font-medium tracking-wide text-gray-500 sm:pl-0"
+                    class="text-center py-3 pl-4 pr-3 text-xs font-medium tracking-wide text-gray-500 sm:pl-0"
                   >
                     {{ player.experience.years }} yrs
                   </th>

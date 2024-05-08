@@ -9,23 +9,61 @@ const props = defineProps({
   }
 })
 
-const currentYear = 2023
-const yearFilter = ref(currentYear)
+const currentYear = 2023;
+const yearFilter = ref(currentYear);
+
+const totalStats = [];
+
+const passingStatCats = [
+  "Completion Percentage",
+  "Completions",
+  "Interceptions",
+  "Passing Attempts",
+  "Passing Touchdowns",
+  "Passing Yards",
+  "Passing Yards After Catch",
+  "Passing Yards Per Game",
+  "Total Sacks",
+  "Yards Per Game",
+  "Quarterback Rating"
+];
+
+const rushingStatsCats = [
+  "Average Gain",
+  "Rushing Attempts",
+  "Rushing Fumbles",
+  "Rushing Touchdowns",
+  "Rushing Yards",
+  "Rushing Yards Per Game",
+  "Yards Per Rush Attempt",
+];
+
+const defensiveStatsCats = [
+  "Defensive Touchdown",
+  "Sacks",
+  "Sack Yards",
+  "Total Tackles",
+  "Yards Allowed",
+  "Points Allowed",
+  "Interceptions"
+];
+
+console.log(props.teamStats);
 
 const passing = props.teamStats[1]
 const rushing = props.teamStats[2]
-const receiving = props.teamStats[3]
+// const receiving = props.teamStats[3]
 const defensive = props.teamStats[4]
 
 </script>
 
 <template>
   <div class="px-4 sm:px-6 lg:px-8">
-    <div class="mt-8 flow-root">
+    <div class="mt-8 mx-auto flow-root">
       <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
 
-          <h1>Offensive</h1>
+          <h1 class="text-xl text-center font-semibold leading-6 text-gray-900">Offense</h1>
 
           <h2>Passing</h2>
           <table class="min-w-full divide-y divide-gray-300">
@@ -57,7 +95,7 @@ const defensive = props.teamStats[4]
             </tbody>
           </table>
 
-          <br>
+          <!-- <br>
 
           <h2>Receiving</h2>
           <table class="min-w-full divide-y divide-gray-300">
@@ -71,7 +109,7 @@ const defensive = props.teamStats[4]
                 <td v-for="value in receiving.stats" :key="receiving.abbreviation" class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">{{ value.value }}</td>
               </tr>
             </tbody>
-          </table>
+          </table> -->
 
           <br>
 

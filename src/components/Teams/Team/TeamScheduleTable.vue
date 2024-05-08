@@ -19,11 +19,11 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="mt-10 px-4 sm:px-8 lg:px-10 container">
+  <div class="mt-10 mx-auto px-4 sm:px-8 lg:px-10 container">
     <!-- Player Season Totals -->
     <div class="sm:flex sm:items-center">
       <div class="sm:flex-auto">
-        <h1 class="text-xl font-semibold leading-6 text-gray-900">Schedule</h1>
+        <h1 class="text-xl text-center font-semibold leading-6 text-gray-900">Schedule</h1>
         <!-- <p class="mt-2 text-sm text-gray-700">A list of all the users in your account including their name, title, email and role.</p> -->
       </div>
     </div>
@@ -36,34 +36,34 @@ const props = defineProps({
           >
             <table class="min-w-full divide-y divide-gray-300">
               <thead>
-                <tr>
+                <tr class="text-center">
                   <th
                     scope="col"
-                    class="px-3 py-3 text-left text-xs font-medium uppercase tracking-wide text-gray-500"
+                    class="px-3 py-3 text-xs font-medium uppercase tracking-wide text-gray-500"
                   >
                     Week
                   </th>
                   <th
                     scope="col"
-                    class="py-3 pl-4 pr-3 text-left text-xs font-medium uppercase tracking-wide text-gray-500 sm:pl-0"
+                    class="px-3 py-3 text-xs font-medium uppercase tracking-wide text-gray-500"
                   >
                     Matchup
                   </th>
                   <th
                     scope="col"
-                    class="py-3 pl-4 pr-3 text-left text-xs font-medium uppercase tracking-wide text-gray-500 sm:pl-0"
+                    class="px-3 py-3 text-xs font-medium uppercase tracking-wide text-gray-500"
                   >
                     Score
                   </th>
                   <th
                     scope="col"
-                    class="py-3 pl-4 pr-3 text-left text-xs font-medium uppercase tracking-wide text-gray-500 sm:pl-0"
+                    class="px-3 py-3 text-xs font-medium uppercase tracking-wide text-gray-500"
                   >
                     Date
                   </th>
                 </tr>
               </thead>
-              <tbody class="divide-y divide-gray-200 bg-white">
+              <tbody class="divide-y divide-gray-200 bg-white text-center">
                 <tr v-for="game in teamSchedule">
                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                     {{ game.week.text }}
@@ -77,7 +77,7 @@ const props = defineProps({
                   >
                     {{
                       game.competitions[0].competitors[1].score.displayValue
-                    }}
+                    }}            
                     -
                     {{ game.competitions[0].competitors[0].score.displayValue }}
                   </td>
